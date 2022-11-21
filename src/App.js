@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+import './components/extractor'
+import Extractor from './components/extractor';
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+      <Extractor />
+
       </header>
     </div>
   );
