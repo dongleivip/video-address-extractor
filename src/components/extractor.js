@@ -1,4 +1,5 @@
 import React from 'react';
+import parsePage from './pageParse';
 
 class Extractor extends React.Component {
   constructor(props) {
@@ -6,7 +7,13 @@ class Extractor extends React.Component {
     this.state = {
       inputVal: '',
       result: '',
-    }
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const videoUrl = parsePage(this.state.inputVal)
+    this.setState({result: videoUrl});
   }
 
   render() {
@@ -15,7 +22,7 @@ class Extractor extends React.Component {
         <p>输入网页链接：</p>
         <div>
           <input value={this.state.inputVal} onChange={ (event) => {this.setState({inputVal: event.target.value})} } />
-          <button onClick={ () => this.setState({result: 'abc'})}>解析</button>
+          <button onClick={this.handleClick}>解析</button>
         </div>
 
 
