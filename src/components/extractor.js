@@ -32,7 +32,11 @@ class Extractor extends React.Component {
             <ul>
               {
                 this.state.result.map((item, index) =>
-                  <li key={index}>{item}</li>
+                  <li key={index}>
+                    <a href={item} target="_blank" rel="noopener noreferrer" >
+                      {item}
+                    </a>
+                  </li>
                 )
               }
             </ul>
